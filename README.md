@@ -1,26 +1,3 @@
-#!/bin/bash
-
-# GitHub Profile Setup Script
-# This script creates a GitHub profile repository and adds the README.md
-
-echo "🚀 Setting up GitHub Profile Repository..."
-
-# Variables
-GITHUB_USERNAME="saurabbhcode"
-REPO_NAME="saurabbhcode"
-README_FILE="README.md"
-
-# Create directory for the repository
-mkdir -p $REPO_NAME
-cd $REPO_NAME
-
-# Initialize git repository
-echo "📁 Initializing Git repository..."
-git init
-
-# Create README.md file
-echo "📝 Creating README.md file..."
-cat > $README_FILE << 'EOF'
 # Hi there, I'm Saurabh Kumar! 👋
 
 ## 🚀 About Me
@@ -124,31 +101,3 @@ cat > $README_FILE << 'EOF'
 
 ---
 ⭐️ From [saurabbhcode](https://github.com/saurabbhcode)
-EOF
-
-# Add README to git
-echo "➕ Adding README.md to git..."
-git add $README_FILE
-
-# Initial commit
-echo "💾 Making initial commit..."
-git commit -m "feat: Add GitHub profile README with comprehensive portfolio"
-
-# Add remote origin (you'll need to create the repository on GitHub first)
-echo "🔗 Adding remote origin..."
-git remote add origin https://github.com/$GITHUB_USERNAME/$REPO_NAME.git
-
-# Set main branch
-git branch -M main
-
-echo "✅ Setup complete!"
-echo ""
-echo "📋 Next steps:"
-echo "1. Go to https://github.com/new"
-echo "2. Create a new repository named '$REPO_NAME'"
-echo "3. Make sure it's PUBLIC"
-echo "4. DON'T initialize with README (we already have one)"
-echo "5. Run: git push -u origin main"
-echo ""
-echo "🎉 Your profile README will then appear on your GitHub profile!"
-echo "📂 Files created in: $(pwd)"
